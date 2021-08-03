@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Reveal.yaml-menu Demo</title>
+    <meta name="description" content="An example slide for demo third-party plugin.">
+    <meta name="author" content="Yuan Chang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="help/icon.png">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+    <style>
+        #footer-left {
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+            font-family: FreeSerif, serif;
+        }
+
+        #footer-left > a > * {
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0.5;
+            font-size: 15pt;
+        }
+
+        .reveal figure {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin: 20px;
+        }
+
+        .reveal figure figcaption {
+            text-align: center;
+        }
+
+        .vstack > * {
+            display: block;
+        }
+
+        .vstack-border {
+            border-top: 2px solid;
+        }
+
+        .hstack {
+            display: flex;
+        }
+
+        .hstack-border {
+            border-left: 2px solid;
+        }
+
+        .reveal h1 {
+            font-size: 36pt;
+        }
+
+        .reveal h2 {
+            font-size: 30pt;
+        }
+
+        .reveal h3 {
+            font-size: 28pt;
+        }
+
+        .reveal h4 {
+            font-size: 24pt;
+        }
+
+        .reveal p, .reveal li, .reveal table, figcaption {
+            font-size: 20pt;
+        }
+
+        .reveal pre code, .reveal section img, #footer-left > a > img {
+            border: none;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        .reveal code {
+            color: white;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+            border-color: #3F3F3F;
+            background: #3F3F3F;
+        }
+
+        .reveal pre code {
+            border-radius: 10px;
+        }
+
+        .reveal .slide-number {
+            font-size: 24pt;
+            position: absolute;
+            right: 2em;
+            top: 1em;
+            color: #877b68;
+            background-color: transparent;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="reveal">
+    <div class="slides">
+        <section><section data-background="help/watermark.png" data-background-size="50%" data-background-opacity="0.7" data-visibility="uncounted"><h1>Reveal.yaml-menu Demo</h1>
+<hr/><p><em>Author: <a href="https://github.com/KmolYuan">Yuan Chang</a></em></p>
+<ul>
+<li><a href="https://github.com/KmolYuan/reveal-yaml-rs">https://github.com/KmolYuan/reveal-yaml-rs</a></li>
+<li><a href="https://github.com/denehyg/reveal.js-menu">https://github.com/denehyg/reveal.js-menu</a></li>
+</ul>
+<p>This is an example slide for demo third-party plugin “reveal.js-menu”.</p>
+</section><section data-background="help/watermark.png" data-background-size="50%" data-background-opacity="0.7"><h1>Metadata</h1>
+<hr/><pre><code class="language-yaml">option:
+  menu:
+    themes: true
+    themes path: /static/dist/theme/
+    transitions: true
+    numbers: true
+    custom:
+      - title: Reveal.yaml
+        icon: &lt;i class=&quot;fa fa-bookmark&quot;&gt;
+        content: Hello world!
+plugin:
+  RevealMenu:
+    - plugin/menu/menu.js
+</code></pre>
+</section>
+    </div>
+</div>
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/math/math.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+<script src="plugin/menu/menu.js"></script>
+
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        menu: {themes: true, themesPath: "dist/theme/", transitions: true, numbers: true, custom: [{title: "Reveal.yaml", icon: "<i class=\"fa fa-bookmark\">", content: "<h1>Hello</h1>\n<p>Markdown can be used here!</p>\n<p><a href=\"https://github.com/KmolYuan/reveal-yaml-rs\">https://github.com/KmolYuan/reveal-yaml-rs</a></p>\n", }, ], },
+        plugins: [RevealNotes, RevealSearch, RevealHighlight, RevealMath, RevealZoom, RevealMenu, ],
+        math: {
+            mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+            config: 'TeX-AMS_HTML-full',
+        }
+    });
+    $(document).ready(() => {
+        let footer = $('#footer').html();
+        if (window.location.search.match(/print-pdf/gi))
+            Reveal.addEventListener('ready', _ => {
+                $('.slide-background').append(footer);
+            });
+        else
+            $('div.reveal').append(footer);
+        // Open external links in new windows or tabs
+        $('a').filter('[href^="http"], [href^="//"]')
+            .not('[href*="' + window.location.host + '"]')
+            .attr('rel', "noopener noreferrer")
+            .attr('target', '_blank');
+    });
+</script>
+</body>
+</html>
