@@ -1,0 +1,54 @@
+description: An example slide for demo third-party plugin.
+author: Yuan Chang
+icon: help/icon.png
+background:
+  src: help/watermark.png
+  size: 50%
+  opacity: 0.7
+option:
+  hash: true
+  slide number: c/t
+  menu:
+    themes: true
+    themes path: /static/dist/theme/
+    transitions: true
+    numbers: true
+    custom:
+      - title: Reveal.yaml
+        icon: <i class="fa fa-bookmark">
+        content: !!markdown |
+          # Hello
+
+          Markdown can be used here!
+
+          <https://github.com/KmolYuan/reveal-yaml-rs>
+plugin:
+  RevealMenu:
+    - plugin/menu/menu.js
+---
+- title: Reveal.yaml-menu Demo
+  doc: |
+    *Author: [Yuan Chang](https://github.com/KmolYuan)*
+
+    + <https://github.com/KmolYuan/reveal-yaml-rs>
+    + <https://github.com/denehyg/reveal.js-menu>
+
+    This is an example slide for demo third-party plugin "reveal.js-menu".
+  sub:
+    - title: Metadata
+      doc: |
+        ```yaml
+        option:
+          menu:
+            themes: true
+            themes path: /static/dist/theme/
+            transitions: true
+            numbers: true
+            custom:
+              - title: Reveal.yaml
+                icon: <i class="fa fa-bookmark">
+                content: Hello world!
+        plugin:
+          RevealMenu:
+            - plugin/menu/menu.js
+        ```
