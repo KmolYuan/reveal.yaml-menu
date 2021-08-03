@@ -10,7 +10,7 @@ option:
   slide number: c/t
   menu:
     themes: true
-    themes path: /static/dist/theme/
+    themes path: "{%mount}dist/theme/"
     transitions: true
     numbers: true
     custom:
