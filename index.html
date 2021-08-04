@@ -117,6 +117,7 @@
 <li><a href="https://github.com/denehyg/reveal.js-menu">https://github.com/denehyg/reveal.js-menu</a></li>
 </ul>
 <p>This is an example slide for demo third-party plugin “reveal.js-menu”.</p>
+<p>Click <a href="https://github.com/KmolYuan/reveal.yaml-menu/blob/master/reveal.yaml">here</a> to see the source code.</p>
 </section><section data-background="help/watermark.png" data-background-size="50%" data-background-opacity="0.7"><h1>Metadata</h1>
 <hr/><pre><code class="language-yaml">option:
   menu:
@@ -127,7 +128,14 @@
     custom:
       - title: Reveal.yaml
         icon: &lt;i class=&quot;fa fa-bookmark&quot;&gt;
-        content: Hello world!
+        content: !!markdown |
+          # Hello
+
+          Markdown can be used here!
+
+          Just add `!!markdown` type notation.
+
+          &lt;https://github.com/KmolYuan/reveal-yaml-rs&gt;
 plugin:
   RevealMenu:
     - plugin/menu/menu.js
@@ -149,8 +157,7 @@ plugin:
 <script>
     Reveal.initialize({
         hash: true,
-        slideNumber: "c/t",
-        menu: {themes: true, themesPath: "dist/theme/", transitions: true, numbers: true, custom: [{title: "Reveal.yaml", icon: "<i class=\"fa fa-bookmark\">", content: "<h1>Hello</h1>\n<p>Markdown can be used here!</p>\n<p><a href=\"https://github.com/KmolYuan/reveal-yaml-rs\">https://github.com/KmolYuan/reveal-yaml-rs</a></p>\n", }, ], },
+        menu: {themes: true, themesPath: "dist/theme/", transitions: true, numbers: true, custom: [{title: "Reveal.yaml", icon: "<i class=\"fa fa-bookmark\">", content: "<h1>Hello</h1>\n<p>Markdown can be used here!</p>\n<p>Just add <code>!!markdown</code> type notation.</p>\n<p><a href=\"https://github.com/KmolYuan/reveal-yaml-rs\">https://github.com/KmolYuan/reveal-yaml-rs</a></p>\n", }, ], },
         plugins: [RevealNotes, RevealSearch, RevealHighlight, RevealMath, RevealZoom, RevealMenu, ],
         math: {
             mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
