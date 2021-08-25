@@ -15,12 +15,12 @@ option:
     custom:
       - title: Reveal.yaml
         icon: <i class="fa fa-bookmark">
-        content: !!markdown |
+        content: !markdown |
           # Hello
 
           Markdown can be used here!
 
-          Just add `!!markdown` type notation.
+          Just add `!markdown` type notation.
 
           <https://github.com/KmolYuan/reveal-yaml-rs>
 plugin:
@@ -50,12 +50,12 @@ plugin:
             custom:
               - title: Reveal.yaml
                 icon: <i class="fa fa-bookmark">
-                content: !!markdown |
+                content: !markdown |
                   # Hello
 
                   Markdown can be used here!
 
-                  Just add `!!markdown` type notation.
+                  Just add `!markdown` type notation.
 
                   <https://github.com/KmolYuan/reveal-yaml-rs>
         plugin:
