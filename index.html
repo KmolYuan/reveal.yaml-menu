@@ -48,6 +48,9 @@
 
         .hstack {
             display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
         .hstack-border {
@@ -110,7 +113,7 @@
 
 <div class="reveal">
     <div class="slides">
-        <section><section data-background="help/watermark.png" data-background-size="50%" data-background-opacity="0.7" data-visibility="uncounted"><h1>Reveal.yaml-menu Demo</h1>
+        <section><section data-background="help/watermark.png" data-background-size="50%" data-background-opacity="0.7"><h1>Reveal.yaml-menu Demo</h1>
 <hr/><p><em>Author: <a href="https://github.com/KmolYuan">Yuan Chang</a></em></p>
 <ul>
 <li><a href="https://github.com/KmolYuan/reveal-yaml-rs">https://github.com/KmolYuan/reveal-yaml-rs</a></li>
@@ -128,12 +131,12 @@
     custom:
       - title: Reveal.yaml
         icon: &lt;i class=&quot;fa fa-bookmark&quot;&gt;
-        content: !!markdown |
+        content: !markdown |
           # Hello
 
           Markdown can be used here!
 
-          Just add `!!markdown` type notation.
+          Just add `!markdown` type notation.
 
           &lt;https://github.com/KmolYuan/reveal-yaml-rs&gt;
 plugin:
@@ -157,10 +160,10 @@ plugin:
 <script>
     Reveal.initialize({
         hash: true,
-        menu: {themes: true, themesPath: "dist/theme/", transitions: true, numbers: true, custom: [{title: "Reveal.yaml", icon: "<i class=\"fa fa-bookmark\">", content: "<h1>Hello</h1>\n<p>Markdown can be used here!</p>\n<p>Just add <code>!!markdown</code> type notation.</p>\n<p><a href=\"https://github.com/KmolYuan/reveal-yaml-rs\">https://github.com/KmolYuan/reveal-yaml-rs</a></p>\n", }, ], },
+        menu: {themes: true, themesPath: "dist/theme/", transitions: true, numbers: true, custom: [{title: "Reveal.yaml", icon: "<i class=\"fa fa-bookmark\">", content: "# Hello\n\nMarkdown can be used here!\n\nJust add `!markdown` type notation.\n\n<https://github.com/KmolYuan/reveal-yaml-rs>\n", }, ], },
         plugins: [RevealNotes, RevealSearch, RevealHighlight, RevealMath, RevealZoom, RevealMenu, ],
         math: {
-            mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+            mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.9/MathJax.js',
             config: 'TeX-AMS_HTML-full',
         }
     });
@@ -177,6 +180,7 @@ plugin:
             .not('[href*="' + window.location.host + '"]')
             .attr('rel', "noopener noreferrer")
             .attr('target', '_blank');
+        
     });
 </script>
 </body>
